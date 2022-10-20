@@ -5,9 +5,11 @@ output = []
 a0=a1=a2=a3=a4=a5=''
 if len(result) > 6:
     print('Число не входит в диапазон')
+#Дополняем список нулями до 6 цифр
 while len(result) < 6:
     zero = [0]
-    result = zero + result    
+    result = zero + result  
+#Проверяем цифру из списка, ставим строку в соответствие
 if result[0] != '0':
     if result[0] == '1': a0 = 'сто'
     if result[0] == '2': a0 = 'двести'
@@ -54,6 +56,7 @@ if result[2] != '0':
         output.append(a2)
 if len_check > 3:
     output.append('тысяч')
+#Подбираем падеж
 if result[2] != '0':
     if result[1] != '1':
         if result[2] == '1':
@@ -112,6 +115,7 @@ if result[5] != '0':
         if result[5] == '8': a5 = 'восемь'
         if result[5] == '9': a5 = 'девять'
         output.append(a5)
+#Подбираем падеж
 output.append('рублей')
 if result[5] != '0':
     if result[4] != '1':
@@ -128,4 +132,3 @@ if result[5] != '0':
             output.pop()
             output.append('рубля')
 print(str.capitalize(' '.join(output)))
-
